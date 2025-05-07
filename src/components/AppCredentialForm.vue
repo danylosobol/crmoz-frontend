@@ -37,7 +37,7 @@ const onSubmit = form.handleSubmit(async (values) => {
     }),
   )
 
-  if (data.value) {
+  if (data.value?.data && data.value.data.length > 0) {
     appStore.addMessage({
       type: 'success',
       text: 'Credentials have been successfully saved.',
@@ -52,7 +52,7 @@ const getSettings = async () => {
     }),
   )
 
-  if (data.value?.data && data.value.data.length) {
+  if (data.value?.data && data.value.data.length > 0) {
     settingsStore.updateSettings(data.value.data)
   }
 

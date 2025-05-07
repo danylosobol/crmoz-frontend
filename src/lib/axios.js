@@ -15,7 +15,6 @@ api.interceptors.response.use(
   (response) => response.data,
   (error) => {
     const response = error.response
-    console.log(response)
     let message = 'Something went wrong'
 
     if (response?.data) {
